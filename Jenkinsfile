@@ -1,28 +1,24 @@
 pipeline {
     agent any
-
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-username/my-simple-app.git'
+                git url: 'https://github.com/Mohanakannan27/my-simple-app.git', credentialsId: 'github-creds'
             }
         }
-
         stage('Build') {
             steps {
-                echo 'No build needed for HTML...'
+                echo 'Building...'
             }
         }
-
         stage('Test') {
             steps {
-                echo 'No tests, just a static file...'
+                echo 'Testing...'
             }
         }
-
         stage('Deploy') {
             steps {
-                sh './deploy.sh'
+                echo 'Deploying...'
             }
         }
     }
