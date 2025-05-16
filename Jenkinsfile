@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/Mohanakannan27/my-simple-app.git'
-
+                git branch: 'main', credentialsId: 'github-creds', url: 'https://github.com/Mohanakannan27/my-simple-app.git'
             }
         }
         stage('Build') {
